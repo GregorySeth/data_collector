@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <title>Human Data Collector</title>
+
+  <head>
+    <link href="../static/css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class= "container">
+
+      <h1>Collecting data</h1>
+      <h3>Please fill the entries to get population statistics</h3>
+
+      <div class = "message">
+
+        {{text | safe}}
+
+      </div>
+      <form action="{{url_for('success')}}" method="post">
+        <div>Mail: <input title="Don't worry your email will be safe" placeholder="Enter your email address" type="email" name="email_name" required><br></div>
+        <div>Sex: <select name="sex_name">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select><br></div>
+        <div>Name: <input title="This data will be used only for statistics" placeholder="Enter your name" type="text" name="name_name" required><br></div>
+        <div>Height: <input title="This data will be used only for statistics" placeholder="Enter your height in cm" type="number" min="50", max="230" name="height_name" required><br></div>
+        <div>Weight: <input title="This data will be used only for statistics" placeholder="Enter your weight in kgs" type="number" min="3", max="250" step="0.1" name="weight_name" required><br></div>
+        <div>Age: <input title="This data will be used only for statistics" placeholder="Enter your age in years" type="number" min="1", max="110" name="age_name" required><br></div>
+        <button type="submit">Submit</button>
+      </form>
+
+    </div>
+
+  </body>
+
+</html>
